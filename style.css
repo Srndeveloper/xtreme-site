@@ -1,0 +1,346 @@
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background:linear-gradient(180deg,#f8f9fa,#e9ecef);
+    
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7) !important;
+    padding:10px 20px;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid #FFD700;
+}
+.navbar .logo{
+    display:flex;
+    align-items: center;
+    gap:10px;
+}
+.navbar .logo img{
+    height:55px;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+.navbar .nav-links{
+    list-style: none;
+    display:flex;
+    gap:20px;
+}
+.navbar .nav-links li a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition:0.3s;
+}
+.navbar .nav-links li a:hover{
+    color:#FFD700 !important;
+}
+.hakkimizda-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+    padding:50px;
+}
+.hakkimizda-text{
+    max-width: 600px;
+}
+.hakkimizda-image img{
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+h1{
+    color:#0077cc;
+    text-align:center;
+    margin: 15px 0;
+    font-weight: bold;
+}
+p{
+    font-size:18px;
+    text-align: center;
+    margin: 5px 0;
+    color:#333;
+}
+
+header{
+    background-color: rgba(13,13,13,0.95);
+    color:white;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #FFD700;
+    backdrop-filter: blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+}
+header nav a {
+    color:white;
+    margin:0 15px;
+    text-decoration: none;
+    transition:0.3s;
+}
+header nav a:hover{
+    color:#ffd700;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 3px;
+   
+}
+.hero{
+    position:relative;
+    text-align: center;
+    color:white;
+    height:420px;
+    overflow:hidden;
+}
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(60%);
+
+}
+.hero-text{
+     color:#FFD700;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:clamp(28px, 6vw, 55px);
+    font-weight: bold;
+    letter-spacing:3px;
+    text-shadow:0 0 25px rgba(0,0,0,0.9);
+
+}
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0.2)
+    );
+}
+.trips-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+    padding:20px;
+}
+.trip-card{
+    border:none;
+    border-radius:20px;
+    width:260px;
+    text-align:center;
+    overflow:hidden;
+    background:white;
+    color:#222;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition:transform 0.3s;
+    position:relative;
+    
+
+}
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0;
+    transition:0.3s;
+}
+.trip-card h2{
+    color:#FFD700;
+}
+.trip-card h3{
+    margin-top:15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.trip-card p{
+    color:#555;
+    margin-bottom:20px;
+}
+.trip-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+.trip-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 10px 35px rgba(0,0,0,0.2);
+}
+.trip-card:hover .overlay{
+    opacity:1;
+}
+
+.overlay a{
+    color:white;
+    background:#FFD700;
+    padding:10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn,.remove-btn{
+    display:inline-block;
+    margin:10px 5px;
+    padding:8px 20px;
+    background-color:#FFD700;
+    color:black;
+    border:none;
+    border-radius:30px;
+    text-decoration:none;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight: bold;
+}
+.btn:hover,.remove-btn:hover{
+    background-color:#e6c200;
+    transform: scale(1.05);
+}
+.remove-btn{
+    background-color:#e63946;
+}
+.remove-btn:hover{
+    background-color:#a71d2a;
+}
+
+.trip-detail img{
+    width:100%;
+    height:auto;
+    margin-bottom:20px;
+    border-radius: 10px;
+}
+form#add-trip-form{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+    margin:20px 0;
+}
+form#add-trip-form input{
+    padding:10px;
+    width:200px;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+form#add-trip-form button{
+    padding:10px 15px;
+    background-color:#FFD700;
+    color:black;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+form#add-trip-form button:hover {
+    background-color:#005fa3;
+}
+footer{
+    background:#0d0d0d;
+    color:#ccc;
+    text-align:center;
+    font-size: 14px;
+    padding:15px;
+    letter-spacing: 1px;
+    margin-top:30px;
+    border-top:2px solid #FFD700;
+}
+@media screen and (max-width:600px)
+{
+   .trip-card{
+    width:90%;
+   } 
+   form#add-trip-form input{
+    width:100%;
+   }
+}
+*{
+    transition: all 0.2s ease;
+}
+.intro{
+    text-align:center;
+    padding:60px 20px;
+}
+.intro h1{
+    font-size:40px;
+    font-weight: bold;
+    color:#222;
+}
+.intro p{
+    font-size: 18px;
+    color:#555;
+    margin-bottom: 20px;
+}
+h2{
+    text-align: center;
+    margin:30px 0;
+}
+section{
+    padding:60px 20px;
+}
+.container h2{
+    font-weight: bold;
+    color:#222;
+}
+.contact-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    max-width:700px;
+    margin:auto;
+
+}
+.text-center i{
+    transition:0.3s;
+}
+
+.text-center i:hover{
+    transform:scale(1.2);
+    color:#FFD700;
+}
+body .hero{
+    height: 320px !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+body .hero img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 28px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
+    transition: 0.3s;
+}
+.whatsapp-btn:hover{
+    transform: scale(1.1);
+}
